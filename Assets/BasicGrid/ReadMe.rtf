@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14580\viewh8820\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs24 \cf0 Updated in version 0.2\
+
+\b0 The empty objects in which the spawn objects are originally created are now removed after the object is spawned.
+\b \
+\
+What is BASICGRiD?
+\b0 \
+BASICGRiD is a simple world-generation tool that creates a two dimensional grid and places objects on this grid. These objects can be anything with a transform component. The grid can be adjusted in dimensions, orientation, delay of object spawning, density of objects, rotation of objects and much more. \
+\
+
+\b What comes with Basic Grid?
+\b0 \
+BASICGRiD comes with two prefabs: GridGenerator_Default.prefab and UnitGenerator_Default.prefab. Additional there are three example scenes available in which the GridGenerator and the UnitGenerator are already set up.\
+\
+
+\b Prefabs
+\b0 	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \ul \ulc0 GridGenerator_Default.prefab\ulnone  : This can be dragged into the scene. In the inspector all variables must be assigned to create a grid filled with objects. The grid generator calculates the positions with the given tile size and world size and other variables.\
+	\
+\ul UnitGenerator_Default.prefab\ulnone  : This can be assigned to the GridGenerator as \'92spawn object\'92. All models or gameObjects that need to get spawned are added to the UnitGenerator_Default.prefab. When a scene gets compiled UnitGenerator_Default.prefab randomly chooses one of the assigned objects. To have more control over what objects are spawned, each object has a ratio variable, which defines the ratio of the object to the rest of the objects in the grid.\
+\
+
+\b Examples\
+
+\b0 \ul CubesColoredGrid
+\b \ulnone  
+\b0 : This is an example in which the \'91isMulticolor\'92, \'92mashUpMaterial\'92 and \'91mashUpRange\'92 is used. If \'91isMulticolor\'92  is checked, a model\'92s meshes are colored individually instead of all meshes one color. Checking \'91\'92mashUpMaterial\'92 wil multiply the color of a material with a random value ranging from 0 to the given value in the \'91mashUpRange\'92 for each mesh.
+\b \
+\
+
+\b0 \ul PlatformerGrid
+\b \ulnone  : 
+\b0 This is an example of an orthographic scene in which several platforms are spawned. 
+\b \
+\
+
+\b0 \ul VillageGrid
+\b \ulnone  
+\b0 : This is an example of a grid with realistic models, forming a basic village. \
+\
+}
