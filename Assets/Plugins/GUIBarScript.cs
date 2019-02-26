@@ -86,11 +86,11 @@ public class GUIBarScript : MonoBehaviour {
 			float xf = 0f;
 			while (x < ValueBar.width) 
 			{
-				Color gC = g.Evaluate(xf/Mask.width);
+				//Color gC = g.Evaluate(xf/Mask.width);
 				
 				if (Mask.GetPixel(x,y).a > 0.1f)
                 {
-					ValueBar.SetPixel(x, y, gC);
+					ValueBar.SetPixel(x, y, Color.clear);
                 }
                 x = x + 1;
                 xf = xf + 1;

@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced 'V2F_POS_FOG' with 'float4 pos : SV_POSITION'
 // Upgrade NOTE: replaced 'glstate.matrix.mvp' with 'UNITY_MATRIX_MVP'
 
@@ -26,7 +29,7 @@ void FurVertexPass(float multiplier, appdata_base v, float furLength, out float4
 	// extrude position
 	float4 wpos = v.vertex;
 	wpos.xyz += v.normal * furLength * multiplier;
-	pos = mul(UNITY_MATRIX_MVP, wpos);	
+	pos = UnityObjectToClipPos(wpos);	
 
 	// fog
 	fog = pos.w;
@@ -42,7 +45,7 @@ void FurVertexPass(float multiplier, appdata_base v, float furLength, out float4
 	alpha += dot(viewDir, v.normal) - _EdgeFade;
 	
 	// lighting
-	float3 normalWorld = mul ((float3x3)_Object2World, v.normal);
+	float3 normalWorld = mul ((float3x3)unity_ObjectToWorld, v.normal);
 	
 	float light0 = clamp(dot(normalWorld, _LightDirection0.xyz), _MyLightColor0.w, 1);
 	float light1 = clamp(dot(normalWorld, _LightDirection1.xyz), _MyLightColor1.w, 1);

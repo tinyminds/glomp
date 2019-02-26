@@ -1,4 +1,8 @@
-﻿// Upgrade NOTE: commented out 'float4 unity_LightmapST', a built-in variable
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: commented out 'float4 unity_LightmapST', a built-in variable
 // Upgrade NOTE: commented out 'sampler2D unity_Lightmap', a built-in variable
 // Upgrade NOTE: commented out 'sampler2D unity_LightmapInd', a built-in variable
 // Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
@@ -89,12 +93,12 @@ Shader "Jove/Free"
 			{
 			    v2f output;
 
-			    output.normalDir = normalize(mul(float4(v.normal, 0.0), _World2Object).xyz);
-			    output.tangentDir = normalize(mul(_Object2World, v.tangent).xyz );
+			    output.normalDir = normalize(mul(float4(v.normal, 0.0), unity_WorldToObject).xyz);
+			    output.tangentDir = normalize(mul(unity_ObjectToWorld, v.tangent).xyz );
 			    output.binormalDir = normalize(cross(output.normalDir, output.tangentDir) * v.tangent.w );  
-			    output.posWS = mul(_Object2World, v.vertex);
+			    output.posWS = mul(unity_ObjectToWorld, v.vertex);
 			    output.tex = TRANSFORM_TEX(v.texcoord, _MainTex);
-			    output.pos = mul(UNITY_MATRIX_MVP, v.vertex);         
+			    output.pos = UnityObjectToClipPos(v.vertex);         
 			    TRANSFER_VERTEX_TO_FRAGMENT(output);
 				#ifndef LIGHTMAP_OFF
 					output.lightmapUV.xy = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;

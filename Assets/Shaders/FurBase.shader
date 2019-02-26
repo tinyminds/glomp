@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced 'PositionFog()' with multiply of UNITY_MATRIX_MVP by position
 // Upgrade NOTE: replaced 'V2F_POS_FOG' with 'float4 pos : SV_POSITION'
 
@@ -40,7 +42,7 @@ Shader "FurBase"
 				{
 					v2f o;
 					
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					
 					return o;
@@ -93,7 +95,7 @@ Shader "FurBase"
 				{
 					v2f o;
 					
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					
 					o.normal = v.normal.xyz;
@@ -150,7 +152,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -211,7 +213,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -272,7 +274,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*2;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -333,7 +335,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*2;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -394,7 +396,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*3;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -455,7 +457,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*3;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -516,7 +518,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*4;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -577,7 +579,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*4;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -638,7 +640,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*5;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -699,7 +701,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*5;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -760,7 +762,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*6;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -821,7 +823,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*6;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -882,7 +884,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*7;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -943,7 +945,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*7;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1004,7 +1006,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*8;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1065,7 +1067,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*8;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1126,7 +1128,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*9;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1187,7 +1189,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*9;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1248,7 +1250,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*10;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1309,7 +1311,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*10;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1370,7 +1372,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*11;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1431,7 +1433,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*11;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1492,7 +1494,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*12;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1553,7 +1555,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*12;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1614,7 +1616,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*13;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1675,7 +1677,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*13;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1736,7 +1738,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*14;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1797,7 +1799,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*14;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1858,7 +1860,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*15;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1919,7 +1921,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*15;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -1980,7 +1982,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*16;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2041,7 +2043,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*16;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2102,7 +2104,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*17;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2163,7 +2165,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*17;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2224,7 +2226,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*18;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2285,7 +2287,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*18;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2346,7 +2348,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*19;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2407,7 +2409,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*19;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2468,7 +2470,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*20;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2529,7 +2531,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*20;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2593,7 +2595,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*10;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					
@@ -2651,7 +2653,7 @@ Shader "FurBase"
 					v2f o;
 					
 					v.vertex.xyz += normalize(v.normal.xyz)*_FurLength*20;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 					o.texcoord.zw = TRANSFORM_TEX(v.texcoord, _NoiseTex);
 					

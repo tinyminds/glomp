@@ -57,7 +57,7 @@ namespace Gamelogic.Grids.Examples
 		private void Take__()
 		{
 			string path = "screen_" + screenshotCount + ".png";
-			Application.CaptureScreenshot(path, 2);
+			ScreenCapture.CaptureScreenshot(path, 2);
 
 			screenshotCount++;
 			PlayerPrefs.SetInt("code-spot::screenshotCount", screenshotCount);

@@ -228,7 +228,7 @@ namespace Gamelogic
 		#region Children
 		public static GameObject FindChild(this MonoBehaviour component, string childName)
 		{
-			return component.transform.FindChild(childName).gameObject;
+			return component.transform.Find(childName).gameObject;
 		}
 
 		public static GameObject FindChild(this MonoBehaviour component, string childName, bool recursive)
