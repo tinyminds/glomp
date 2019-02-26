@@ -1,10 +1,8 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\jellyTest - Copy - Copy (2)\Assets\UImenu\Scripts\Menu\LevelLevelButton.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\GUIBarScript.cs">
     <Files>
-      <File FileName="..\jellyTest - Copy - Copy (2)\Assets\Plugins\Persistance.js" Line="31" Column="12" />
-      <File FileName="..\jellyTest - Copy - Copy (2)\Assets\UImenu\Scripts\Menu\LevelLevelButton.cs" Line="15" Column="16" />
-      <File FileName="..\jellyTest - Copy - Copy (2)\Assets\UImenu\Scripts\Menu\LevelSelect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\GUIBarScript.cs" Line="91" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

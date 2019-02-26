@@ -90,7 +90,7 @@ public class GUIBarScript : MonoBehaviour {
 				
 				if (Mask.GetPixel(x,y).a > 0.1f)
                 {
-					ValueBar.SetPixel(x, y, Color.clear);
+					//ValueBar.SetPixel(x, y, Color.red);
                 }
                 x = x + 1;
                 xf = xf + 1;
